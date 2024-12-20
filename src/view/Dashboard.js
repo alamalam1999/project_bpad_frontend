@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import ListBook from '../Books/ListBook';
+import ListDataRekapKendaraan from '../Books/ListDataRekapKendaraan';
+import ListDataKendaraanByAsn from '../Books/ListDataKendaraanByAsn';
+import DataVisualization from '../Books/DataVisualization';
 
 function Dashboard() {
     const navigate = useNavigate();
@@ -106,7 +109,7 @@ function Dashboard() {
                     <div className='mt-3'>
                         <h1>Welcome to the Dashboard</h1>
                         <h4>Daftar Check</h4>
-                        <button className='btn btn-primary' onClick={goToAddBooks}>Add Books</button>
+                        <button className='btn btn-primary' onClick={goToAddBooks}>Add Relasi</button>
                         <table className="table">
                             <thead>
                                 <tr>
@@ -119,8 +122,27 @@ function Dashboard() {
                                 </tr>
                             </thead>
                             {/* <ListBook /> */}
-
+                            <ListDataRekapKendaraan />
                         </table>
+
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">Nopol</th>
+                                    <th scope="col">Jenis Roda</th>
+                                    <th scope="col">Merek</th>
+                                    <th scope="col">Tipe</th>
+                                    <th scope="col">Penanggung Jawab</th>
+                                </tr>
+                            </thead>
+                            <ListDataKendaraanByAsn />
+                           
+                        </table>
+
+                           
+                           <DataVisualization />
+
                     </div>
                 </div>
             </div>
